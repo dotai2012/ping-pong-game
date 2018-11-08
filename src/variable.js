@@ -1,0 +1,11 @@
+global.positionX = 175;
+global.positionY = 187.5;
+global.paddleHeight = 100;
+global.canvas = null;
+global.ctx = null;
+global.speedX = 5;
+global.speedY = 3;
+global.leftPaddleY = 250;
+global.rightPaddleY = 250;
+global.playerScore = 0;
+global.AIScore = 0;

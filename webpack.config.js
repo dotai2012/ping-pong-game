@@ -18,12 +18,5 @@ const config = {
   },
   mode: 'development',
   devtool: 'source-map',
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-      minSize: 0,
-      name: 'vendor',
-    },
-  },
 };
 module.exports = config;
