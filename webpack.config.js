@@ -14,6 +14,16 @@ const config = {
         exclude: /node_modules/,
         use: 'babel-loader',
       },
+      {
+        test: /\.mp3$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'music/',
+          },
+        }],
+      },
     ],
   },
   mode: 'development',
