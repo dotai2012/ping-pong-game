@@ -3,6 +3,13 @@ function fillRect(x, y, width, height, color) {
   global.ctx.fillRect(x, y, width, height);
 }
 
+function strokeRect(x, y, width, height, color) {
+  global.ctx.beginPath();
+  global.ctx.strokeStyle = color;
+  global.ctx.rect(x, y, width, height);
+  global.ctx.stroke();
+}
+
 function drawBtn(x, y, width, height, colorContainer, colorFont, font, text, xText, yText, state = 'enable') {
   if (state === 'enable') {
     fillRect(x, y, width, height, colorContainer);
@@ -11,6 +18,10 @@ function drawBtn(x, y, width, height, colorContainer, colorFont, font, text, xTe
     global.ctx.fillText(text, xText, yText);
   } else {
     fillRect(x, y, width, height, colorContainer);
+    global.ctx.beginPath();
+    global.ctx.moveTo(x, y);
+    global.ctx.lineTo(x + width, y + height);
+    global.ctx.stroke();
     global.ctx.fillStyle = colorFont;
     global.ctx.font = font;
     global.ctx.fillText(text, xText, yText);
@@ -35,5 +46,5 @@ function randomPosNeg() {
   return Math.random() < 0.5 ? -1 : 1;
 }
 export {
-  fillRect, random, randomPosNeg, detectMousePosition, drawBtn,
+  fillRect, strokeRect, random, randomPosNeg, detectMousePosition, drawBtn,
 };

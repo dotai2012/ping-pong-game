@@ -1,8 +1,8 @@
 import './src/variable';
+import './src/style/main.css';
 import { detectMousePosition } from './src/components/helper';
 import { PADDLEHEIGHT } from './src/config';
 import welcome from './src/screens/welcome';
-import './src/style/main.css';
 
 window.onload = () => {
   // Bootstrap
