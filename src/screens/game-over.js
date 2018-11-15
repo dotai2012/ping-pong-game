@@ -7,14 +7,9 @@ const eventListener = (e) => {
 
   // Play Again button position
   if (mousePos.x >= 250 && mousePos.x <= 350 && mousePos.y >= 275 && mousePos.y <= 325) {
-    // Welcome screen
-    welcome();
-
     // Reset All variable
     global.positionX = 175;
     global.positionY = 187.5;
-    global.canvas = document.querySelector('#game');
-    global.ctx = global.canvas.getContext('2d');
     global.leftPaddleY = 250;
     global.rightPaddleY = 250;
 
@@ -32,7 +27,12 @@ const eventListener = (e) => {
     global.isGlowBall = false;
 
     global.canvas.removeEventListener('click', eventListener);
-    document.querySelector('audio').remove();
+    document.querySelectorAll('audio').forEach((a) => {
+      a.remove();
+    });
+
+    // Welcome screen
+    welcome();
   }
 };
 
@@ -48,9 +48,9 @@ const gameOver = () => {
   // Winner
   global.ctx.font = 'bold 21px Pxlvetica';
   if (global.playerScore === 10) {
-    global.ctx.fillText('Congratulation! You\'re the winner', 205, 200);
+    global.ctx.fillText('Congratulation! You\'re the winner', 170, 200);
   } else {
-    global.ctx.fillText('Ha ha! You\'re loser AF :D', 205, 200);
+    global.ctx.fillText('Ha ha! You\'re loser AF :D', 195, 200);
   }
 
   drawBtn(250, 275, 100, 50, 'white', 'black', 'bold 15px Pxlvetica', 'PLAY AGAIN', 265, 305);

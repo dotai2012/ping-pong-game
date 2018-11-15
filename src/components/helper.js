@@ -3,13 +3,6 @@ function fillRect(x, y, width, height, color) {
   global.ctx.fillRect(x, y, width, height);
 }
 
-function strokeRect(x, y, width, height, color) {
-  global.ctx.beginPath();
-  global.ctx.strokeStyle = color;
-  global.ctx.rect(x, y, width, height);
-  global.ctx.stroke();
-}
-
 function drawBtn(x, y, width, height, colorContainer, colorFont, font, text, xText, yText, state = 'enable') {
   if (state === 'enable') {
     fillRect(x, y, width, height, colorContainer);
@@ -21,6 +14,7 @@ function drawBtn(x, y, width, height, colorContainer, colorFont, font, text, xTe
     global.ctx.beginPath();
     global.ctx.moveTo(x, y);
     global.ctx.lineTo(x + width, y + height);
+    global.ctx.strokeStyle = 'black';
     global.ctx.stroke();
     global.ctx.fillStyle = colorFont;
     global.ctx.font = font;

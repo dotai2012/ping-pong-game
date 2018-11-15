@@ -36,6 +36,9 @@ const eventListener = (e) => {
 };
 
 const welcome = () => {
+  // Click event
+  global.canvas.addEventListener('click', eventListener);
+
   // Background
   fillRect(0, 0, global.canvas.width, global.canvas.height, 'black');
 
@@ -58,13 +61,19 @@ const welcome = () => {
   // Init Start Button
   drawBtn(250, 275, 100, 50, 'white', 'black', 'bold 15px Pxlvetica', 'START', 280, 305);
 
-  // Init Music Button
-  drawBtn(115, 350, 80, 35, 'white', 'black', 'bold 15px Pxlvetica', 'MUSIC', 135, 375);
-
   // Init Sound Button
-  drawBtn(405, 350, 80, 35, 'white', 'black', 'bold 15px Pxlvetica', 'SOUND', 425, 375);
+  if (global.isSound) {
+    drawBtn(405, 350, 80, 35, 'white', 'black', 'bold 15px Pxlvetica', 'SOUND', 425, 375, 'enable');
+  } else {
+    drawBtn(405, 350, 80, 35, 'white', 'black', 'bold 15px Pxlvetica', 'SOUND', 425, 375, 'disable');
+  }
 
-  global.canvas.addEventListener('click', eventListener);
+  // Init Music Button
+  if (global.isMusic) {
+    drawBtn(115, 350, 80, 35, 'white', 'black', 'bold 15px Pxlvetica', 'MUSIC', 135, 375, 'enable');
+  } else {
+    drawBtn(115, 350, 80, 35, 'white', 'black', 'bold 15px Pxlvetica', 'MUSIC', 135, 375, 'disable');
+  }
 };
 
 export default welcome;
