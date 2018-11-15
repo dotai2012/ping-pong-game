@@ -50,6 +50,11 @@ const welcome = () => {
   // Ball
   ball.drawBall();
 
+  // Init Author Name
+  global.ctx.fillStyle = 'white';
+  global.ctx.font = 'bold 21px Pxlvetica';
+  global.ctx.fillText('Made by Tai Do. For education only', 160, 150);
+
   // Init Start Button
   drawBtn(250, 275, 100, 50, 'white', 'black', 'bold 15px Pxlvetica', 'START', 280, 305);
 

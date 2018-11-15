@@ -5,6 +5,7 @@ import { PADDLEHEIGHT } from './src/config';
 import welcome from './src/screens/welcome';
 
 window.onload = () => {
+
   // Bootstrap
   global.canvas = document.querySelector('#game');
   global.ctx = global.canvas.getContext('2d');

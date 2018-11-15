@@ -50,7 +50,7 @@ const updateFrame = () => {
     }
 
     // Check score
-    if (global.playerScore === 20 || global.AIScore === 20) {
+    if (global.playerScore === 10 || global.AIScore === 10) {
       clearInterval(interval);
       gameOver();
     }
@@ -62,7 +62,7 @@ const play = () => {
   if (global.isMusic) {
     const baseURL = './src/audios/music/';
     const urlAudio = `${baseURL}${playList[Math.floor(Math.random() * playList.length)]}`;
-    const music = new Audio(urlAudio, 0.05);
+    const music = new Audio(urlAudio, 0.25);
     music.play();
     music.onEnd((instance) => {
     // eslint-disable-next-line no-param-reassign

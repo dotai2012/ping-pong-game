@@ -47,7 +47,7 @@ const gameOver = () => {
 
   // Winner
   global.ctx.font = 'bold 21px Pxlvetica';
-  if (global.playerScore === 20) {
+  if (global.playerScore === 10) {
     global.ctx.fillText('Congratulation! You\'re the winner', 205, 200);
   } else {
     global.ctx.fillText('Ha ha! You\'re loser AF :D', 205, 200);

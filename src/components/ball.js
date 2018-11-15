@@ -25,7 +25,7 @@ class Ball {
       global.ctx.shadowColor = 'white';
       global.ctx.shadowBlur = 50;
     }
-    global.ctx.fillStyle = 'red';
+    global.ctx.fillStyle = '#c0392b';
     global.ctx.arc(global.positionX, global.positionY, 10, 0, Math.PI * 2);
     global.ctx.fill();
   }
@@ -57,7 +57,7 @@ class Ball {
     // Ball hit paddle
     if (global.positionX > global.canvas.width - 20 && global.positionY >= global.rightPaddleY && global.positionY <= global.rightPaddleY + PADDLEHEIGHT) {
       if (global.isSound) {
-        const sound = new Audio('./src/audios/sound/pong.mp3', 1);
+        const sound = new Audio('./src/audios/sound/pong.mp3', 0.25);
         sound.play();
       }
 
