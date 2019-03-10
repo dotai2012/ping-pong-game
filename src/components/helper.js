@@ -40,5 +40,5 @@ function randomPosNeg() {
   return Math.random() < 0.5 ? -1 : 1;
 }
 export {
-  fillRect, strokeRect, random, randomPosNeg, detectMousePosition, drawBtn,
+  fillRect, random, randomPosNeg, detectMousePosition, drawBtn,
 };
